@@ -15,6 +15,12 @@ class PatientController extends Controller
         $this->patientRepository = $patientRepository;
     }
 
+    /**
+    * Создание поциента
+    *
+    * @param Request $request
+    * @return JsonResponse
+    */
     public function createPatient(Request $request)
     {
 
@@ -29,6 +35,11 @@ class PatientController extends Controller
         return response()->json($patient, 201);
     }
 
+    /**
+     * Получение списка пациентов
+     *
+     * @return JsonResponse
+     */
     public function getPatients()
     {
         $patients = $this->patientRepository->getAll();
